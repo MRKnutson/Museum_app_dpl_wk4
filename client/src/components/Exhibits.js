@@ -19,7 +19,16 @@ const Exhibits = () => {
     } catch (err) {
       alert("error getting exhibits: debug");
     };
-  };
+  };  
+
+  const deleteExhibit = async (id) => {
+    try {
+      axios.delete(`/api/exhibits/${id}`);
+      setExhibits(exhibits.filter((exhibit)=>exhibit.id !==id))
+    } catch (err) {
+      alert ("error deleting exhibit: debug")
+    };
+  }
 
   const renderExhibits = () => {
     return exhibits.map((exhibit)=>{
@@ -27,7 +36,12 @@ const Exhibits = () => {
         <div key = {exhibit.id} style={style.exhibits}>
           <h2>Area: {exhibit.area}</h2>
           <p>Circa: {exhibit.circa}</p>
-          <Link to={`/exhibits/${exhibit.id}/edit`}>Edit Exhibit</Link>
+          <Link to={`/exhibits/${exhibit.id}/edit`}>
+            <button type ="button">
+              Edit Exhibit
+            </button>
+          </Link>
+          <button onClick = {()=>deleteExhibit(exhibit.id)}>Delete Exhibit</button>
         </div>
       );
     });
@@ -37,6 +51,7 @@ const Exhibits = () => {
     <div>
       <h1 style={style.header}>Museum of Blah Blah Blah</h1>
       <Navbar />
+      <h2 style={style.h2}>Current Exhibits:</h2>
       {renderExhibits()}
     </div>
   )
@@ -57,5 +72,8 @@ const style ={
     padding: "5px",
     margin: "10px",
     border: "2px solid black",
+  },
+  h2: {
+    marginLeft: "10px",
   },
 };

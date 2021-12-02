@@ -54,6 +54,6 @@ const style ={
   items: {
     padding: "5px",
     margin: "10px",
-    border: "2px solid black",
+    border: "2 px solid black",
   },
 };

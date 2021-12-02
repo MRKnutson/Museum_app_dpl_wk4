@@ -13,6 +13,6 @@ code {
 }
 
 button {
-  margin-top: 10px;
+  margin: 10px 10px 0px 10px;
   box-shadow: 1.5px 1.5px 1.5px 1.5px grey;
 }
