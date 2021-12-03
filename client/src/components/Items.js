@@ -21,6 +21,11 @@ const Items = () => {
     };
   };
 
+  const deleteItem = async (id) => {
+    axios.delete(`/api/items/${id}`)
+    setItems(items.filter((item) => item.id!==id))
+  };
+
   const renderItems = () => {
     return items.map((item)=>{
       return(
@@ -32,10 +37,12 @@ const Items = () => {
               Edit Item
             </button>
           </Link>
+          <button onClick= {()=>deleteItem(item.id)}>Delete Item</button>
         </div>
       );
     });
   };
+
 
   return(
     <div>
