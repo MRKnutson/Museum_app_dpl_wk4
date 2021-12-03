@@ -36,6 +36,11 @@ const Exhibits = () => {
         <div key = {exhibit.id} style={style.exhibits}>
           <h2>Area: {exhibit.area}</h2>
           <p>Circa: {exhibit.circa}</p>
+          <Link to={`/exhibits/${exhibit.id}/artifacts` }>
+            <button type ="button">
+              View Artifacts
+            </button>
+          </Link>
           <Link to={`/exhibits/${exhibit.id}/edit`}>
             <button type ="button">
               Edit Exhibit
