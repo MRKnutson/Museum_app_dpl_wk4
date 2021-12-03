@@ -7,6 +7,7 @@ import ExhibitForm from './components/ExhibitForm';
 import Artifacts from './components/Artifacts';
 import ArtifactForm from './components/ArtifactForm';
 import ArtifactShow from './components/ArtifactShow';
+import ItemForm from './components/ItemForm';
 
 function App() {
   return (
@@ -18,9 +19,11 @@ function App() {
         <Route path ="/exhibits/:id/edit" element = {<ExhibitForm />}/>
         <Route path ="/exhibits/:id/artifacts" element = {<Artifacts />}/>
         <Route path ="/exhibits/:exhibit_id/artifacts/new" element = {<ArtifactForm />}/>
-        <Route path ="/exhibits/:exhibit_id/artifacts/:id/edit" element = {<ArtifactForm />}/>
         <Route path ="/exhibits/:exhibit_id/artifacts/:id" element = {<ArtifactShow  />}/>
+        <Route path ="/exhibits/:exhibit_id/artifacts/:id/edit" element = {<ArtifactForm />}/>
         <Route path ="/items" element = {<Items />}/>
+        <Route path ="/items/new" element = {<ItemForm />}/>
+        <Route path ="/items/:id/edit" element = {<ItemForm />}/>
       </Routes>
     </>
   );

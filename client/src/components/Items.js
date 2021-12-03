@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 
 const Items = () => {
@@ -26,6 +27,11 @@ const Items = () => {
         <div key = {item.id} style={style.items}>
           <h2>Item: {item.name}</h2>
           <p>Price: ${item.price}</p>
+          <Link to={`/items/${item.id}/edit`}>
+            <button>
+              Edit Item
+            </button>
+          </Link>
         </div>
       );
     });
@@ -36,6 +42,11 @@ const Items = () => {
       <h1 style={style.header}>Museum Gift Shop</h1>
       <Navbar />
       {renderItems()}
+      <Link to={`/items/new`}>
+        <button>
+          Add Item
+        </button>
+      </Link>
     </div>
   )
 };
@@ -54,6 +65,6 @@ const style ={
   items: {
     padding: "5px",
     margin: "10px",
-    border: "2 px solid black",
+    border: "2px solid black",
   },
 };
