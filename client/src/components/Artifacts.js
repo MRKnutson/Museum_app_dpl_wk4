@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import NavBar from "./Navbar"
 
@@ -8,10 +8,12 @@ const Artifacts = (props) => {
 
   const [artifacts, setArtifacts]=useState([])
   const [exhibit, setExhibit]=useState([])
+  const location =useLocation();
   const params = useParams();
 
   useEffect(()=>{
     getData()
+    console.log(location.state)
   },[])
 
   const getData = async () => {

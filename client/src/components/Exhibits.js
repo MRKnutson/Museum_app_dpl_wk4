@@ -36,7 +36,7 @@ const Exhibits = () => {
         <div key = {exhibit.id} style={style.exhibits}>
           <h2>Area: {exhibit.area}</h2>
           <p>Circa: {exhibit.circa}</p>
-          <Link to={`/exhibits/${exhibit.id}/artifacts` }>
+          <Link to={`/exhibits/${exhibit.id}/artifacts` } state = {{ exhibit }}>
             <button type ="button">
               View Artifacts
             </button>
