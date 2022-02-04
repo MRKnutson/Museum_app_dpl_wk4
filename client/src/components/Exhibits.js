@@ -58,6 +58,7 @@ const Exhibits = () => {
       <Navbar />
       <h2 style={style.h2}>Current Exhibits:</h2>
       {renderExhibits()}
+      {JSON.stringify(exhibits)}
     </div>
   )
 };
